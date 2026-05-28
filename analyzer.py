@@ -60,7 +60,8 @@ def parse_assessment(text, item):
 def extract_field(text, field_name):
     for line in text.split("\n"):
         if field_name.lower() in line.lower() and ":" in line:
-            return line.split(":", 1)[1].strip()
+            value = line.split(":", 1)[1].strip()
+            return value.replace("**", "").strip()
     return "N/A"
     
 def analyze_all(items):
