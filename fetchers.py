@@ -69,12 +69,30 @@ def fetch_basel():
     print(f"Basel: found {len(results)} items")
     return results
 
+def fetch_fed():
+    print("Fetching Federal Reserve...")
+    url = "https://www.federalreserve.gov/feeds/press_all.xml"
+    headers = {"User-Agent": "regulatory-intel-tool david@bondriver.com"}
+    feed = feedparser.parse(url, request_headers=headers)
+    results = []
+    for entry in feed.entries[:5]:
+        results.append({
+            "source": "Fed",
+            "title": entry.get("title", "No title"),
+            "link": entry.get("link", ""),
+            "published": entry.get("published", ""),
+            "summary": entry.get("summary", "")[:300]
+        })
+    print(f"Fed: found {len(results)} items")
+    return results
+
 def fetch_all():
     all_results = []
     all_results.extend(fetch_sec())
     all_results.extend(fetch_cftc())
     all_results.extend(fetch_fca())
     all_results.extend(fetch_basel())
+    all_results.extend(fetch_fed())
     print(f"\nTotal items fetched: {len(all_results)}")
     return all_results
 

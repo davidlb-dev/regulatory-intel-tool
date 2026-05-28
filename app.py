@@ -30,6 +30,7 @@ HTML_TEMPLATE = """
         .source-CFTC { background: #1e8449; }
         .source-FCA { background: #6c3483; }
         .source-Basel { background: #b7950b; color: #333; }
+        .source-Fed { background: #c0392b; }
         .risk { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
         .risk-High { background: #fadbd8; color: #922b21; }
         .risk-Medium { background: #fdebd0; color: #935116; }
@@ -60,7 +61,7 @@ HTML_TEMPLATE = """
 
             btn.disabled = true;
             btn.textContent = 'Running...';
-            status.textContent = 'Fetching publications and analyzing with Claude... this takes ~2 minutes';
+            status.textContent = 'Fetching latest publications from SEC, CFTC, FCA, Basel, and Federal Reserve... this takes ~2 minutes';
             results.innerHTML = '';
 
             try {
