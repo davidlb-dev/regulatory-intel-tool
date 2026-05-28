@@ -4,7 +4,7 @@ from datetime import datetime
 
 def fetch_sec():
     print("Fetching SEC...")
-    url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=&dateb=&owner=include&count=10&search_text=&output=atom"
+    url = "https://www.sec.gov/news/pressreleases.rss"
     headers = {"User-Agent": "regulatory-intel-tool david@bondriver.com"}
     feed = feedparser.parse(url, request_headers=headers)
     results = []

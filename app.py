@@ -69,6 +69,10 @@ HTML_TEMPLATE = """
                 const data = await response.json();
 
                 status.textContent = `${data.length} publications analyzed`;
+                data.sort((a, b) => {
+                    const order = { 'High': 0, 'Medium': 1, 'Low': 2, 'N/A': 3 };
+                    return (order[a.risk_level] ?? 3) - (order[b.risk_level] ?? 3);
+                });
                 results.innerHTML = data.map(item => `
                     <div class="item">
                         <div class="item-header">
