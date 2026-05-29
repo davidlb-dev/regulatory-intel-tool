@@ -47,6 +47,7 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <h1>Regulatory Intel Tool</h1>
+    <p style="color: #555; margin-bottom: 8px; font-size: 15px;">Monitors regulatory publications from SEC, CFTC, FCA, Basel, and the Federal Reserve — and generates structured impact assessments using AI.</p>
     <div class="controls">
         <button id="analyzeBtn" onclick="runAnalysis()">Run Analysis</button>
         <div id="status"></div>
@@ -98,6 +99,9 @@ HTML_TEMPLATE = """
             btn.textContent = 'Run Analysis';
         }
     </script>
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #aaa; text-align: center;">
+        © 2026 <a href="https://bondriverpartners.net/" style="color: #aaa;">Bond River Partners</a>. All rights reserved.
+    </footer>
 </body>
 </html>
 """
