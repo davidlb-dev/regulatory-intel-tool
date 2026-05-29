@@ -8,13 +8,13 @@ def fetch_sec():
     headers = {"User-Agent": "regulatory-intel-tool david@bondriver.com"}
     feed = feedparser.parse(url, request_headers=headers)
     results = []
-    for entry in feed.entries[:2]:
+    for entry in feed.entries[:1]:
         results.append({
             "source": "SEC",
             "title": entry.get("title", "No title"),
             "link": entry.get("link", ""),
             "published": entry.get("published", ""),
-            "summary": entry.get("summary", "")[:200]
+            "summary": entry.get("summary", "")[:100]
         })
     print(f"SEC: found {len(results)} items")
     return results
@@ -25,13 +25,13 @@ def fetch_cftc():
     headers = {"User-Agent": "regulatory-intel-tool david@bondriver.com"}
     feed = feedparser.parse(url)
     results = []
-    for entry in feed.entries[:2]:
+    for entry in feed.entries[:1]:
         results.append({
             "source": "CFTC",
             "title": entry.get("title", "No title"),
             "link": entry.get("link", ""),
             "published": entry.get("published", ""),
-            "summary": entry.get("summary", "")[:200]
+            "summary": entry.get("summary", "")[:100]
         })
     print(f"CFTC: found {len(results)} items")
     return results
@@ -41,13 +41,13 @@ def fetch_fca():
     url = "https://www.fca.org.uk/news/rss.xml"
     feed = feedparser.parse(url)
     results = []
-    for entry in feed.entries[:2]:
+    for entry in feed.entries[:1]:
         results.append({
             "source": "FCA",
             "title": entry.get("title", "No title"),
             "link": entry.get("link", ""),
             "published": entry.get("published", ""),
-            "summary": entry.get("summary", "")[:200]
+            "summary": entry.get("summary", "")[:100]
         })
     print(f"FCA: found {len(results)} items")
     return results
@@ -58,13 +58,13 @@ def fetch_basel():
     url = "https://www.bis.org/doclist/bcbspubls.rss"
     feed = feedparser.parse(url)
     results = []
-    for entry in feed.entries[:2]:
+    for entry in feed.entries[:1]:
         results.append({
             "source": "Basel",
             "title": entry.get("title", "No title"),
             "link": entry.get("link", ""),
             "published": entry.get("published", ""),
-            "summary": entry.get("summary", "")[:200]
+            "summary": entry.get("summary", "")[:100]
         })
     print(f"Basel: found {len(results)} items")
     return results
@@ -75,13 +75,13 @@ def fetch_fed():
     headers = {"User-Agent": "regulatory-intel-tool david@bondriver.com"}
     feed = feedparser.parse(url, request_headers=headers)
     results = []
-    for entry in feed.entries[:2]:
+    for entry in feed.entries[:1]:
         results.append({
             "source": "Fed",
             "title": entry.get("title", "No title"),
             "link": entry.get("link", ""),
             "published": entry.get("published", ""),
-            "summary": entry.get("summary", "")[:200]
+            "summary": entry.get("summary", "")[:100]
         })
     print(f"Fed: found {len(results)} items")
     return results
