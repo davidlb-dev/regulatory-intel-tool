@@ -70,7 +70,10 @@ HTML_TEMPLATE = """
                 const response = await fetch('/analyze');
                 const data = await response.json();
 
-                status.textContent = `${data.length} publications analyzed`;
+                const now = new Date();
+                const options = { timeZone: 'America/New_York', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+                const timestamp = now.toLocaleString('en-US', options) + ' ET';
+                status.textContent = `${data.length} publications analyzed — analysis completed on ${timestamp}`;
                 data.sort((a, b) => {
                     const order = { 'High': 0, 'Medium': 1, 'Low': 2, 'N/A': 3 };
                     return (order[a.risk_level] ?? 3) - (order[b.risk_level] ?? 3);
