@@ -96,7 +96,7 @@ HTML_TEMPLATE = """
                     </div>
                 `).join('');
             } catch (err) {
-                status.textContent = 'Error running analysis. Check the terminal.';
+                status.textContent = 'Analysis failed. Please try again in a moment.';
             }
 
             btn.disabled = false;
