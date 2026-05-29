@@ -55,6 +55,7 @@ HTML_TEMPLATE = """
     <div id="results"></div>
 
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
         async function runAnalysis() {
             const btn = document.getElementById('analyzeBtn');
             const status = document.getElementById('status');
@@ -100,7 +101,7 @@ HTML_TEMPLATE = """
         }
     </script>
     <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #aaa; text-align: center;">
-        © 2026 <a href="https://bondriverpartners.net/" style="color: #aaa;">Bond River Partners</a>. All rights reserved.
+        © <span id="year">2026</span> <a href="https://bondriverpartners.net/" style="color: #aaa;">Bond River Partners</a>. All rights reserved.
     </footer>
 </body>
 </html>
