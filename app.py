@@ -63,7 +63,7 @@ HTML_TEMPLATE = """
 
             btn.disabled = true;
             btn.textContent = 'Running...';
-            status.textContent = 'Fetching latest publications from SEC, CFTC, FCA, Basel, and Federal Reserve... this takes ~3 minutes';
+            status.textContent = 'Retrieving latest publications from SEC, CFTC, FCA, Basel, and Federal Reserve... this takes ~3 minutes';
             results.innerHTML = '';
 
             try {
